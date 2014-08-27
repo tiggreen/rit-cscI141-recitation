@@ -1,22 +1,32 @@
-from turtle import *
+# @tiggreen
 
-def triangle():
-	forward(100)
+from turtle import *
+import sys
+
+def triangle(side):
+	forward(side)
 	left(120)
-	forward(100)
+	forward(side)
 	left(120)
-	forward(100)
+	forward(side)
 	left(120)
 
 def main():
-	triangle()
+		
+	if len(sys.argv) > 2:
+		raw_input("Usage: python triangle triangleside")
+		return 
+		
+	side = int(sys.argv[1])
+	
+	triangle(side)
 	left(90)
-	triangle()
+	triangle(side)
 	left(90)
-	triangle()
+	triangle(side)
 	left(90)
-	triangle()
+	triangle(side)
 	left(90)
-	raw_input("Enter to close!")
+	raw_input("Hit enter to close the window!")
 
 main()
