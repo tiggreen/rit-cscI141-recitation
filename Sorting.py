@@ -30,6 +30,21 @@ def binarySearchIter(data, target):
 	return found
 	
 
+def binarySearchRec(lst, target):
+	
+	if lst == []:
+		return False
+	
+	middle = len(lst) // 2 
+	
+	if lst[middle] == target:
+		return True
+	elif target > lst[middle]:
+		return binarySearchRec(lst[middle+1:], target)
+	else:
+		return binarySearchRec(lst[:middle], target)
+	
+
 
 def listExperiments():
 	lst = ["red", "orange", "green", "blue"]
@@ -48,7 +63,7 @@ def listExperiments():
 
 def main():
 	arr = [1, 3, 5, 17, 23]
-	print(binarySearchIter(arr, 23))
+	print(binarySearchRec(arr, 4))
 
 
 if __name__ == '__main__':
