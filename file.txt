@@ -1,0 +1,7 @@
+Jack,10
+John,20
+Jason,11
+John,5
+Annie,2
+Annie,6
+Jack,4
