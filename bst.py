@@ -32,33 +32,48 @@ def insert(tree, data):
 
 """
 Inorder traversal.
+
+We can also implement inorder this way if we want to
+return a string as a result.
 """
 def inorder(tree):
-	pass
+	result = ''
+	if tree is None:
+		return ''
+	result = inorder(tree.left) + str(tree.data) +  " " + inorder(tree.right)
+	return result
+	
 
 """
 Preorder traversal.
 """
 def preorder(tree):
-	pass
+	if tree is None:
+		return
+	print(tree.data)
+	preorder(tree.left)
+	preorder(tree.right)
 
 """
 Postorder traversal.
 """
 def postorder(tree):
-	pass
+	if tree is None:
+		return
+	postorder(tree.left)
+	postorder(tree.right)
+	print(tree.data)
+	
 			
 def main():
 	tree = None
 	tree = insert(tree, 5)
 	tree = insert(tree, 3)
-	tree = insert(tree, 4)
 	tree = insert(tree, 1)
+	tree = insert(tree, 4)
 	tree = insert(tree, 7)
 	tree = insert(tree, 6)
 	tree = insert(tree, 9)
-
-	inorder(tree)
 
 if __name__ == '__main__':
 	main()
