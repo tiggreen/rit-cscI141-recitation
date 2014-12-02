@@ -40,6 +40,7 @@ def inorder(tree):
 	result = ''
 	if tree is None:
 		return ''
+
 	result = inorder(tree.left) + str(tree.data) +  " " + inorder(tree.right)
 	return result
 	
@@ -67,13 +68,14 @@ def postorder(tree):
 			
 def main():
 	tree = None
-	tree = insert(tree, 5)
-	tree = insert(tree, 3)
-	tree = insert(tree, 1)
-	tree = insert(tree, 4)
 	tree = insert(tree, 7)
+	tree = insert(tree, 5)
+	tree = insert(tree, 4)
 	tree = insert(tree, 6)
 	tree = insert(tree, 9)
+	tree = insert(tree, 8)
+	tree = insert(tree, 10)
+	print(inorder(tree))
 
 if __name__ == '__main__':
 	main()
